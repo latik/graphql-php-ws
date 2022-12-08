@@ -1,15 +1,14 @@
 {
-    "name": "goalgorilla/graphql-php-ws",
+    "name": "latik/graphql-php-ws",
     "description": "GraphQL WebSocket middleware for Ratchet.",
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.0",
         "ext-json": "*",
-        "bunny/bunny": "^0.4.3 || ^0.5.0",
-        "cboden/ratchet": "^0.4.3",
-        "psr/log": "^1",
-        "webonyx/graphql-php": "^14.8"
+        "cboden/ratchet": "^0.4.4",
+        "psr/log": "*",
+        "webonyx/graphql-php": "^14.11"
     },
     "config": {
         "sort-packages": true

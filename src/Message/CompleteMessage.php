@@ -19,50 +19,52 @@ use GraphQLWs\Exception\InvalidMessageException;
  * source stream. No further events, relevant to the original subscription,
  * should be sent through.
  */
-class CompleteMessage extends MessageBase implements ClientMessageInterface, ServerMessageInterface {
+class CompleteMessage extends MessageBase implements ClientMessageInterface, ServerMessageInterface
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static string $type = "complete";
 
-  /**
-   * {@inheritdoc}
-   */
-  public static string $type = "complete";
+    /**
+     * The operation id.
+     */
+    protected string $id;
 
-  /**
-   * The operation id.
-   */
-  protected string $id;
-
-  /**
-   * Create a new CompleteMessage instance.
-   *
-   * @param string $id
-   *   The id of the operation.
-   */
-  public function __construct(string $id) {
-    $this->id = $id;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function fromArray(array $data): self {
-    if ($data['type'] !== static::$type) {
-      throw new \RuntimeException("Trying to instantiate message of incorrect type '{$data['type']}'.");
-    }
-    if (empty($data['id'])) {
-      throw new InvalidMessageException("Missing id");
+    /**
+     * Create a new CompleteMessage instance.
+     *
+     * @param string $id
+     *   The id of the operation.
+     */
+    public function __construct(string $id)
+    {
+        $this->id = $id;
     }
 
-    return new static($data['id']);
-  }
+    /**
+     * {@inheritdoc}
+     */
+    public static function fromArray(array $data): self
+    {
+        if ($data['type'] !== static::$type) {
+            throw new \RuntimeException("Trying to instantiate message of incorrect type '{$data['type']}'.");
+        }
+        if (empty($data['id'])) {
+            throw new InvalidMessageException("Missing id");
+        }
 
-  /**
-   * Get the operation id.
-   *
-   * @return string
-   *   The operation id.
-   */
-  public function getId() : string {
-    return $this->id;
-  }
+        return new static($data['id']);
+    }
 
+    /**
+     * Get the operation id.
+     *
+     * @return string
+     *   The operation id.
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
 }

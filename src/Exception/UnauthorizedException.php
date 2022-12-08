@@ -7,18 +7,18 @@ use Throwable;
 /**
  * Exception because the client is unauthorised.
  */
-class UnauthorizedException extends ConnectionExceptionBase {
+class UnauthorizedException extends ConnectionExceptionBase
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected $code = 4401;
 
-  /**
-   * {@inheritdoc}
-   */
-  protected $code = 4401;
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct($message = "Unauthorized", Throwable $previous = NULL) {
-    parent::__construct($message, $previous);
-  }
-
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct($message = "Unauthorized", Throwable $previous = null)
+    {
+        parent::__construct($message, $previous);
+    }
 }

@@ -5,4 +5,6 @@ namespace GraphQLWs\Exception;
 /**
  * A connection exception is a fatal error in a GraphQL WebSocket connection.
  */
-interface ConnectionExceptionInterface extends \Throwable {}
+interface ConnectionExceptionInterface extends \Throwable
+{
+}

@@ -1,10 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
 namespace GraphQLWs;
-
-use GraphQL\Language\AST\OperationDefinitionNode;
-use Ratchet\WebSocket\WsConnection;
 
 /**
  * Marker interface for event handlers for the subscription server.
@@ -13,4 +11,6 @@ use Ratchet\WebSocket\WsConnection;
  *
  * @internal
  */
-interface GraphQLWsEventHandlerInterface {}
+interface GraphQLWsEventHandlerInterface
+{
+}

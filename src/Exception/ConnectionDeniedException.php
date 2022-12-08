@@ -7,13 +7,13 @@ use Throwable;
 /**
  * Exception signaling that the client's 'ConnectionInit was denied.
  */
-class ConnectionDeniedException extends ConnectionExceptionBase {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct($message = "Access Denied", Throwable $previous = NULL) {
-    parent::__construct($message, $previous);
-  }
-
+class ConnectionDeniedException extends ConnectionExceptionBase
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct($message = "Access Denied", Throwable $previous = null)
+    {
+        parent::__construct($message, $previous);
+    }
 }

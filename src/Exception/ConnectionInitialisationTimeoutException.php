@@ -7,18 +7,18 @@ use Throwable;
 /**
  * Exception signaling that the client took too long to send ConnectionInit.
  */
-class ConnectionInitialisationTimeoutException extends ConnectionExceptionBase {
+class ConnectionInitialisationTimeoutException extends ConnectionExceptionBase
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected $code = 4408;
 
-  /**
-   * {@inheritdoc}
-   */
-  protected $code = 4408;
-
-  /**
-   * {@inheritdoc}
-   */
-  public function __construct($message = "Connection initialisation timeout", Throwable $previous = NULL) {
-    parent::__construct($message, $previous);
-  }
-
+    /**
+     * {@inheritdoc}
+     */
+    public function __construct($message = "Connection initialisation timeout", Throwable $previous = null)
+    {
+        parent::__construct($message, $previous);
+    }
 }
