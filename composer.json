@@ -1,5 +1,5 @@
 {
-    "name": "latik/graphql-php-ws",
+    "name": "goalgorilla/graphql-php-ws",
     "description": "GraphQL WebSocket middleware for Ratchet.",
     "type": "library",
     "license": "MIT",
